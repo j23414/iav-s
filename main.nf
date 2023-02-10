@@ -29,6 +29,21 @@ include { select_H3;
           get_h3_motif; } from './modules/h3motif.nf'
 
 // === drafting processes
+process cache_updatedate {
+  publishDir "results/", mode: 'symlink'
+  input: path(genbank_file)
+  output: path("last_updated.txt")
+  script:
+  """
+  #! /usr/bin/env bash
+  cat $genbank_file \
+    | grep "^LOCUS" \
+    | awk 'OFS="\t" {print \$2,\$8}' \
+    > last_updated.txt
+  # e.g. "MZ892449        29-AUG-2021"
+  """
+}
+
 process select_New_Genbank_IDs {
   publishDir "results/", mode: 'symlink'
   input: tuple path(genbank_ids), path(cache_gb)
@@ -111,12 +126,10 @@ workflow {
   // | get_clades
   | collect
   | uniq_merge
-  | view
 
   /* pull h3 motif */
   h3_ch = uniq_merge.out
   | select_H3
-  | view
 
   combine_Files.out
   | genbank_to_protein
@@ -124,10 +137,14 @@ workflow {
   | select_H3_proteins
   | align_h3
   | get_h3_motif
-  | view
 
   uniq_merge.out 
   | combine(get_h3_motif.out)
   | merge_motif
+  | view
+
+  /* thinking of caching */
+  combine_Files.out
+  | cache_updatedate
   | view
 }
