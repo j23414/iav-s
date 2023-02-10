@@ -15,7 +15,7 @@ BV-BRC
 Download as Text `~/Downloads/BVBRC_strain.txt`
 
 ```
-nextflow run main.nf --bvbrc_txt data/BVBRC_strain.txt
+nextflow run j23414/iav-s -r main --bvbrc_txt data/BVBRC_strain.txt -resume
 
 N E X T F L O W  ~  version 22.10.4
 Launching `main.nf` [desperate_einstein] DSL2 - revision: c017b4b5a8
