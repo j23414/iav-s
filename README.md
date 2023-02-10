@@ -68,3 +68,8 @@ Thoughts on merging:
   * concatinate with unchanged cached metadata
   * sort by collection date
   * ah, each segment's genbank has its own update date `H1_gb.update` and since each segment may have multiple genbanks...keep a separate "genbank\tlast_updated" file. 
+
+Thoughts on api limits:
+
+* If pulling data from a database, set `maxForks 1` up to `maxForks 3`
+* If pulling scripts from github, may not be necessary but could use `maxForks 8` to be safe

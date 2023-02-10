@@ -18,6 +18,7 @@ nextflow.enable.dsl=2
 
 // ==================== Equivalent to octoFLU ====================
 process split_segments {
+  maxForks 8
   publishDir "results/", mode: 'symlink'
   input: path(fasta)
   output: path("*.ids")
@@ -48,6 +49,7 @@ process split_segments {
 }
 
 process subset_fasta {
+  maxForks 8
   publishDir "results/", mode: 'symlink'
   input: tuple path(ids), path(fasta)
   output: path("${ids.simpleName}.fasta")
@@ -84,6 +86,7 @@ process FastTree {
 }
 
 process treedist {
+  maxForks 8
   publishDir "results/", mode: 'symlink'
   input: path(tre)
   output: path("*.octoflu")

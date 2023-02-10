@@ -43,6 +43,7 @@ process select_New_Genbank_IDs {
 }
 
 process uniq_merge {
+  maxForks 8
   publishDir "results/", mode: 'symlink'
   input: path(clade_files)
   output: path("A0_metadata.tsv")
@@ -72,6 +73,7 @@ process uniq_merge {
 }
 
 process merge_motif{
+  maxForks 8
   publishDir "results/", mode: 'symlink'
   input: tuple path(metadata),path(H3_motif)
   output: path("new_metadata.tsv")
@@ -83,6 +85,7 @@ process merge_motif{
   """
 }
 
+// === Main workflow
 workflow {
   print("Start")
   channel.fromPath(params.bvbrc_txt)

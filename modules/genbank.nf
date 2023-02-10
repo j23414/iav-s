@@ -17,6 +17,7 @@ process fetch_GenBank {
 }
 
 process genbank_to_fasta {
+  maxForks 8
   publishDir "results/", mode: 'symlink'
   input: path(genbank)
   output: path("A0.fasta")
