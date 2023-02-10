@@ -3,6 +3,7 @@
 nextflow.enable.dsl=2
 
 params.bvbrc_txt=false  // BVBRC_strain.txt
+params.clusterOptions=false // slurm related placeholder
 
 // === Import modules
 include { select_A0;
