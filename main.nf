@@ -20,7 +20,8 @@ include { split_segments;
           Mafft;
           FastTree;
           treedist;
-          get_clades; } from './modules/octoflu.nf'
+          get_clades; 
+          OctoFLU; } from './modules/octoflu.nf'
 
 include { select_H3;
           select_H3_proteins;
@@ -99,14 +100,15 @@ workflow {
   | combine(channel.of("A0.gb"))
   | combine_Files
   | genbank_to_fasta
-  | split_segments
-  | flatten
-  | combine(genbank_to_fasta.out)
-  | subset_fasta
-  | Mafft
-  | FastTree
-  | treedist
-  | get_clades
+  | OctoFLU
+  // | split_segments
+  // | flatten
+  // | combine(genbank_to_fasta.out)
+  // | subset_fasta
+  // | Mafft
+  // | FastTree
+  // | treedist
+  // | get_clades
   | collect
   | uniq_merge
   | view

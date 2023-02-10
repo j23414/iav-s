@@ -129,3 +129,21 @@ process get_clades {
     >> ${octoflu.simpleName}_clade.txt
   """
 }
+
+workflow OctoFLU {
+  take:
+    fasta_ch
+  
+  main:
+    fasta_ch
+      | split_segments
+      | flatten
+      | combine(fasta_ch)
+      | subset_fasta
+      | Mafft
+      | FastTree
+      | treedist
+      | get_clades
+  
+  emit: get_clades.out
+}

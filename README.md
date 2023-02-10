@@ -21,32 +21,32 @@ N E X T F L O W  ~  version 22.10.4
 Launching `main.nf` [desperate_einstein] DSL2 - revision: c017b4b5a8
 Start
 executor >  local (1)
-[e9/82ad03] process > select_A0 (1)          [100%] 1 of 1, cached: 1 ✔
-[90/e15900] process > select_GenBank_IDs (1) [100%] 1 of 1, cached: 1 ✔
-[a5/f1511d] process > split_Files (1)        [100%] 1 of 1, cached: 1 ✔
-[13/b033ac] process > fetch_GenBank (26)     [100%] 26 of 26, cached: 26 ✔
-[6d/b6c3e9] process > combine_Files (1)      [100%] 1 of 1, cached: 1 ✔
-[c3/c71518] process > genbank_to_fasta (1)   [100%] 1 of 1, cached: 1 ✔
-[60/1f203a] process > split_segments (1)     [100%] 1 of 1, cached: 1 ✔
-[f6/790849] process > subset_fasta (6)       [100%] 10 of 10, cached: 10 ✔
-[af/070bd5] process > Mafft (10)             [100%] 10 of 10, cached: 10 ✔
-[15/c72d35] process > FastTree (10)          [100%] 10 of 10, cached: 10 ✔
-[bd/700b0c] process > treedist (10)          [100%] 10 of 10, cached: 10 ✔
-[23/8217dd] process > get_clades (10)        [100%] 10 of 10, cached: 10 ✔
-[29/86ef37] process > uniq_merge             [100%] 1 of 1 ✔
-[b0/8682ab] process > select_H3              [100%] 1 of 1 ✔
-[45/c45eb9] process > genbank_to_protein (1) [100%] 1 of 1, cached: 1 ✔
-[ef/897d82] process > select_H3_proteins (1) [100%] 1 of 1 ✔
-[7c/4ab2f9] process > align_h3 (1)           [100%] 1 of 1 ✔
-[f1/1f05a1] process > get_h3_motif (1)       [100%] 1 of 1 ✔
-[bf/263290] process > merge_motif (1)        [100%] 1 of 1 ✔
-/Users/jenchang/github/j23414/iav-s/work/bf/263290b08cb703cec00ac78fcf10bc/new_metadata.tsv
+[e9/82ad03] process > select_A0 (1)              [100%] 1 of 1, cached: 1 ✔
+[90/e15900] process > select_GenBank_IDs (1)     [100%] 1 of 1, cached: 1 ✔
+[a5/f1511d] process > split_Files (1)            [100%] 1 of 1, cached: 1 ✔
+[13/b033ac] process > fetch_GenBank (26)         [100%] 26 of 26, cached: 26 ✔
+[6d/b6c3e9] process > combine_Files (1)          [100%] 1 of 1, cached: 1 ✔
+[c3/c71518] process > genbank_to_fasta (1)       [100%] 1 of 1, cached: 1 ✔
+[23/01d543] process > OctoFLU:split_segments (1) [100%] 1 of 1 ✔
+[bb/c2d6b3] process > OctoFLU:subset_fasta (6)   [100%] 10 of 10 ✔
+[dc/05741f] process > OctoFLU:Mafft (9)          [100%] 10 of 10 ✔
+[14/38011c] process > OctoFLU:FastTree (8)       [100%] 10 of 10 ✔
+[21/914d07] process > OctoFLU:treedist (10)      [100%] 10 of 10 ✔
+[4e/7d15ae] process > OctoFLU:get_clades (10)    [100%] 10 of 10 ✔
+[1b/ac29a6] process > uniq_merge                 [100%] 1 of 1 ✔
+[e0/1c8f36] process > select_H3                  [100%] 1 of 1 ✔
+[45/c45eb9] process > genbank_to_protein (1)     [100%] 1 of 1, cached: 1 ✔
+[3e/e47730] process > select_H3_proteins (1)     [100%] 1 of 1 ✔
+[2f/be63d6] process > align_h3 (1)               [100%] 1 of 1 ✔
+[ca/42b4e9] process > get_h3_motif (1)           [100%] 1 of 1 ✔
+[ad/d5b37c] process > merge_motif (1)            [100%] 1 of 1 ✔
+/Users/jenchang/github/j23414/iav-s/work/ad/d5b37c7e17b8f4425917cd60f78e42/new_metadata.tsv
 
-Completed at: 10-Feb-2023 08:45:52
-Duration    : 10m 16s
-CPU hours   : 1.2 (85.7% cached)
-Succeeded   : 6
-Cached      : 83
+Completed at: 10-Feb-2023 09:52:13
+Duration    : 18m 7s
+CPU hours   : 0.8 (14.9% cached)
+Succeeded   : 57
+Cached      : 32
 ```
 
 Thoughts on level of caching:
