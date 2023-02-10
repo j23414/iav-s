@@ -81,10 +81,11 @@ process uniq_merge {
   python uniq_merge.py --cache 04.txt --new PB1_clade.txt --groupby_col barcode --outfile 05.txt
   python uniq_merge.py --cache 05.txt --new PA_clade.txt --groupby_col barcode --outfile 06.txt
   rm 03.txt 04.txt 05.txt
-  python uniq_merge.py --cache 06.txt --new M_clade.txt --groupby_col barcode --outfile 07.txt
-  python uniq_merge.py --cache 07.txt --new NS_clade.txt --groupby_col barcode --outfile 08.txt
-  cat 08.txt | grep -v "template_barcode" > A0_metadata.tsv
-  rm 06.txt 07.txt 08.txt
+  python uniq_merge.py --cache 06.txt --new NP_clade.txt --groupby_col barcode --outfile 07.txt
+  python uniq_merge.py --cache 07.txt --new M_clade.txt --groupby_col barcode --outfile 08.txt
+  python uniq_merge.py --cache 08.txt --new NS_clade.txt --groupby_col barcode --outfile 09.txt
+  cat 09.txt | grep -v "template_barcode" > A0_metadata.tsv
+  rm 06.txt 07.txt 08.txt 09.txt
   """
 }
 
