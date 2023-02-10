@@ -21,23 +21,25 @@ N E X T F L O W  ~  version 22.10.4
 Launching `main.nf` [desperate_einstein] DSL2 - revision: c017b4b5a8
 Start
 executor >  local (1)
-[a1/8746b3] process > select_A0 (1)          [100%] 1 of 1, cached: 1 ✔
-[6a/105494] process > select_GenBank_IDs (1) [100%] 1 of 1, cached: 1 ✔
-[ec/041846] process > fetch_GenBank (1)      [100%] 1 of 1, cached: 1 ✔
-[e5/381521] process > genbank_to_fasta (1)   [100%] 1 of 1, cached: 1 ✔
-[73/fda3ef] process > split_segments (1)     [100%] 1 of 1, cached: 1 ✔
-[14/d38f8a] process > subset_fasta (9)       [100%] 10 of 10, cached: 10 ✔
-[5e/32492b] process > Mafft (10)             [100%] 10 of 10, cached: 10 ✔
-[83/e13da5] process > FastTree (9)           [100%] 10 of 10, cached: 10 ✔
-[15/afcaa6] process > treedist (10)          [100%] 10 of 10, cached: 10 ✔
-[5b/d9c978] process > get_clades (10)        [100%] 10 of 10, cached: 10 ✔
-[7f/43dc28] process > uniq_merge             [100%] 1 of 1, cached: 1 ✔
-[af/b85566] process > select_H3              [100%] 1 of 1, cached: 1 ✔
-[78/18b8af] process > genbank_to_protein (1) [100%] 1 of 1, cached: 1 ✔
-[c9/30cbf4] process > select_H3_proteins (1) [100%] 1 of 1, cached: 1 ✔
-[e3/103a9a] process > align_h3 (1)           [100%] 1 of 1, cached: 1 ✔
-[64/52ad18] process > get_h3_motif (1)       [100%] 1 of 1, cached: 1 ✔
-[10/99e7f4] process > merge_motif (1)        [100%] 1 of 1 ✔
+[e9/82ad03] process > select_A0 (1)          [100%] 1 of 1, cached: 1 ✔
+[90/e15900] process > select_GenBank_IDs (1) [100%] 1 of 1, cached: 1 ✔
+[a5/f1511d] process > split_Files (1)        [100%] 1 of 1, cached: 1 ✔
+[13/b033ac] process > fetch_GenBank (26)     [100%] 26 of 26, cached: 26 ✔
+[6d/b6c3e9] process > combine_Files (1)      [100%] 1 of 1, cached: 1 ✔
+[c3/c71518] process > genbank_to_fasta (1)   [100%] 1 of 1, cached: 1 ✔
+[60/1f203a] process > split_segments (1)     [100%] 1 of 1, cached: 1 ✔
+[61/c01ede] process > subset_fasta (10)      [100%] 10 of 10, cached: 10 ✔
+[74/20f53e] process > Mafft (10)             [100%] 10 of 10, cached: 10 ✔
+[de/e16d73] process > FastTree (10)          [100%] 10 of 10, cached: 10 ✔
+[5c/b37035] process > treedist (10)          [100%] 10 of 10, cached: 10 ✔
+[54/7fc575] process > get_clades (10)        [100%] 10 of 10, cached: 10 ✔
+[b2/6cbe55] process > uniq_merge             [  0%] 0 of 1
+[-        ] process > select_H3              -
+[45/c45eb9] process > genbank_to_protein (1) [100%] 1 of 1, cached: 1 ✔
+[-        ] process > select_H3_proteins     -
+[-        ] process > align_h3               -
+[-        ] process > get_h3_motif           -
+[-        ] process > merge_motif            -
 /Users/jchang3/github/j23414/iav-s/work/7f/43dc28efbaf4357185d6add5adb130/A0_metadata.tsv
 /Users/jchang3/github/j23414/iav-s/work/af/b8556653b17ea62229ac2b70ba00ff/H3.gb_ids
 /Users/jchang3/github/j23414/iav-s/work/64/52ad1853b7bfd133e19a7f714197c5/H3_motif.txt
