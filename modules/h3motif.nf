@@ -3,7 +3,7 @@
 nextflow.enable.dsl=2
 
 process select_H3 {
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/H3_motif", mode: 'symlink'
   input: path(metadata)
   output: path("H3.gb_ids")
   script:
@@ -19,7 +19,7 @@ process select_H3 {
 }
 
 process select_H3_proteins {
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/H3_motif", mode: 'symlink'
   input: tuple path(protein_fasta), path(H3_ids)
   output: path("H3.faa")
   script:
@@ -30,7 +30,7 @@ process select_H3_proteins {
 }
 
 process align_h3 {
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/H3_motif", mode: 'symlink'
   input: path(H3_faa)
   output: path("H3_aln.faa")
   script:
@@ -41,7 +41,7 @@ process align_h3 {
 }
 
 process get_h3_motif {
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/H3_motif", mode: 'symlink'
   input: path(H3_aln_faa)
   output: path("H3_motif.txt")
   script:

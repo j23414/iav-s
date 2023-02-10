@@ -19,7 +19,7 @@ nextflow.enable.dsl=2
 // ==================== Equivalent to octoFLU ====================
 process split_segments {
   maxForks 8
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/octoFLU", mode: 'symlink'
   input: path(fasta)
   output: path("*.ids")
   script:
@@ -50,7 +50,7 @@ process split_segments {
 
 process subset_fasta {
   maxForks 8
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/octoFLU", mode: 'symlink'
   input: tuple path(ids), path(fasta)
   output: path("${ids.simpleName}.fasta")
   script:
@@ -63,7 +63,7 @@ process subset_fasta {
 }
 
 process Mafft {
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/octoFLU", mode: 'symlink'
   input: path(fasta)
   output: path("${fasta.simpleName}_aln.fna")
   script:
@@ -74,7 +74,7 @@ process Mafft {
 }
 
 process FastTree {
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/octoFLU", mode: 'symlink'
   input: path(fasta)
   output: path("*.tre")
   script:
@@ -87,7 +87,7 @@ process FastTree {
 
 process treedist {
   maxForks 8
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/octoFLU", mode: 'symlink'
   input: path(tre)
   output: path("*.octoflu")
   script:
@@ -110,7 +110,7 @@ process treedist {
 }
 
 process get_clades {
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/octoFLU", mode: 'symlink'
   input: path(octoflu)
   output: path("${octoflu.simpleName}_clade.txt")
   script:

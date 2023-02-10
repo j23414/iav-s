@@ -3,7 +3,7 @@
 nextflow.enable.dsl=2
 
 process select_A0 {
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/00_BVBRC", mode: 'symlink'
   input: path(bvbrc)
   output: path("bvbrc_metadata.tsv")
   script:
@@ -14,7 +14,7 @@ process select_A0 {
 }
 
 process select_GenBank_IDs {
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/00_BVBRC", mode: 'symlink'
   input: path(bvbrc)
   output: path("GenBank.ids")
   script:

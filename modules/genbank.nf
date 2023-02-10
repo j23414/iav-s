@@ -4,7 +4,7 @@ nextflow.enable.dsl=2
 
 process fetch_GenBank {
   maxForks 1
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/01_GenBank", mode: 'symlink'
   input: path(genbank_ids)
   output: path("${genbank_ids.simpleName}.gb")
   script:

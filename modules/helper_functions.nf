@@ -3,7 +3,7 @@
 nextflow.enable.dsl=2
 
 process split_Files {
-  publishDir "results/", mode: 'symlink'
+  publishDir "results/splits", mode: 'symlink'
   input: path(largefile)
   output: path("A0_split*")
   script:
