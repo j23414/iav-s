@@ -29,6 +29,8 @@ include { select_H3;
           align_h3;
           get_h3_motif; } from './modules/h3motif.nf'
 
+include { prep_upload; } from './modules/prep_data.nf'
+
 // === drafting processes
 process cache_updatedate {
   publishDir "results/", mode: 'symlink'
@@ -118,14 +120,6 @@ workflow {
   | combine_Files
   | genbank_to_fasta
   | OctoFLU
-  // | split_segments
-  // | flatten
-  // | combine(genbank_to_fasta.out)
-  // | subset_fasta
-  // | Mafft
-  // | FastTree
-  // | treedist
-  // | get_clades
   | collect
   | uniq_merge
 
@@ -148,5 +142,10 @@ workflow {
   /* thinking of caching */
   combine_Files.out
   | cache_updatedate
+  | view
+
+  genbank_to_fasta.out
+  | combine(merge_motif.out)
+  | prep_upload
   | view
 }
